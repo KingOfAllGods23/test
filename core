@@ -816,7 +816,6 @@ while gui.Parent do
         break
       end
     end
-  end
     if refill then
       local oldcf = root.CFrame
       local waiting = false
