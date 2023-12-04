@@ -811,7 +811,7 @@ while gui.Parent do
   if doSupplier then
     local refill=false
     for s,c in pairs(supplyCounts) do
-      if c <= settings.refill_at then
+      if c and c <= settings.refill_at then
         refill=true
         print(c)
         break
