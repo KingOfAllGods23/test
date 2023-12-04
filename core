@@ -810,7 +810,7 @@ while gui.Parent do
   tryCook()
   if doDelivery then
     local refill=false
-    print(supplyCounts)
+    print(workspace)
     for s,c in pairs(supplyCounts) do
       if c and c <= settings.refill_at then
         refill=true
