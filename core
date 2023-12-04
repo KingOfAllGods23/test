@@ -1,6 +1,5 @@
 -- updated by zade#1337 originally made by serilKilla
 -- working as of 18/01/2023
--- modified by King
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
@@ -10,7 +9,7 @@ if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getr
   h:Destroy()
   return
 end
-local settings = {refill_at=0, refill_end=99, deliver_at=1, stay_in_kitchen=true}
+local settings = {refill_at=0, refill_end=60, deliver_at=24, stay_in_kitchen=true}
 local doCashier,doBoxer,doCook,doSupplier,doDelivery = false,false,false,false,false
 if readfile then
   pcall(function()
@@ -811,8 +810,7 @@ while gui.Parent do
   tryCook()
   if doDelivery then
     local refill=false
-    print(workspace.SupplyButtons)
-    for s,c in pairs(supplyCounts) do
+    for s,c in pairs(SupplyCount) do
       if c and c <= settings.refill_at then
         refill=true
         print(c)
