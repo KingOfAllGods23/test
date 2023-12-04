@@ -1,15 +1,5 @@
 -- updated by zade#1337 originally made by serilKilla
 -- working as of 18/01/2023
--- debugScript.lua
-
--- Imprimir o objeto workspace.SupplyButtons
-print("Objeto SupplyButtons:", tostring(workspace.SupplyButtons))
-
--- Imprimir detalhes da tabela SupplyButtons
-print("Detalhes da tabela SupplyButtons:")
-for key, value in pairs(workspace.SupplyButtons) do
-    print(key, value)
-end
 
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
