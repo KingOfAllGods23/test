@@ -812,7 +812,7 @@ while gui.Parent do
   if doDelivery then
     local refill=true
       else
-        refill=false
+        local refill=false
         print("refil acabou")
         break
       end
