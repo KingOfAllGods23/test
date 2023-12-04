@@ -811,11 +811,9 @@ while gui.Parent do
   if doSupplier then
     local refill=false
     for s,c in pairs(supplyCounts) do
-      print("Conteúdo de supplyCounts:")
-      for key, value in pairs(supplyCounts) do
-          print(key, value)
       if c <= settings.refill_at then
         refill=true
+        print(c)
         break
       end
     end
