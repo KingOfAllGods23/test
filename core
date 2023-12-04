@@ -1,5 +1,6 @@
 -- updated by zade#1337 originally made by serilKilla
 -- working as of 18/01/2023
+--modified by King
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
@@ -809,11 +810,10 @@ while gui.Parent do
   end
   tryCook()
   if doDelivery then
-    local refill=false
-    for s,c in pairs(suppliesCount) do
-      if c and c <= settings.refill_at then
-        refill=true
-        print(c)
+    local refill=true
+      else
+        refill=false
+        print("refil acabou")
         break
       end
     end
