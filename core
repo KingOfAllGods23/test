@@ -1,5 +1,5 @@
 -- Modified By King
--- Mod V3.3
+-- Mod V3.7
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
@@ -477,7 +477,7 @@ local function isFullyOpen(oven)
 return oven.IsOpen.Value==true and (oven.Door.Meter.RotVelocity.Z^2)^.5<.0001
 end
 
-local bcolorToSupply = {["Dark orange"]="Sausage",["Bright blue"]="Pepperoni",["Bright yellow"]="Cheese",["Bright red"]="TomatoSauce",["Dark green"]="Dew",["Brick yellow"]="Dough",["Light stone grey"]="Box",["Really black"]="Dew"}
+local bcolorToSupply = {["Dark orange"]="Sausage",["Bright blue"]="Pepperoni",["Bright yellow"]="Cheese",["Bright red"]="TomatoSauce",["Navy blue"]="Dew",["Brick yellow"]="Dough",["Light stone grey"]="Box",["Really black"]="Dew"}
 local supplyButtons = {}
 for i,v in ipairs(workspace.SupplyButtons:GetChildren()) do
 supplyButtons[i] = v.Unpressed
@@ -856,11 +856,13 @@ if doSupplier then
           local s = bcolorToSupply[btn.BrickColor.Name]
             local papaleguas = ii
           print("O supply counts: ", papaleguas)
+          print("cor pra suprir:", s)
         if papaleguas < settings.refill_end then
           local count = 0
           if #boxes > 30 then
             for i=1, #boxes do
               local box = boxes[i]
+              print(box.BrickColor.Name)
               if bcolorToSupply[box.BrickColor.Name]==s and box.Anchored==false and box.Position.Z < -940 then
                 count=count+1
               end
