@@ -1,6 +1,6 @@
 -- updated by zade#1337 originally made by serilKilla
 -- working as of 18/01/2023
--- modified by King :v
+-- modified by King again...
 getupvalues = getupvalues or debug.getupvalues
 setupvalue = setupvalue or debug.setupvalue
 if not (getrawmetatable and getupvalues and setupvalue and (getreg or debug.getregistry)) then
@@ -811,11 +811,12 @@ while gui.Parent do
   tryCook()
   if doDelivery then
     local refill=true
-      else
+  end
+  if not doDelivery then
         local refill=false
         print("refil acabou")
-        break
-      -- end come on!
+       -- break
+      -- end
     end
     if refill then
       local oldcf = root.CFrame
