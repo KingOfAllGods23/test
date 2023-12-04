@@ -810,7 +810,7 @@ while gui.Parent do
   tryCook()
   if doSupplier then
     local refill=false
-    for s,c in pairs(supplyCounts.Cheese) do
+    for s,c in pairs(supplyCounts) do
       if c <= settings.refill_at then
         refill=true
         break
