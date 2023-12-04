@@ -735,7 +735,7 @@ while gui.Parent do
       break
     end
   end
-  if doDelivery then
+  if doSupplier then
     local wstools = FindAllDeliveryTools(workspace)
     if #wstools > 1 or (wstools[1] and ffc(wstools[1].Handle,"X10")) then
       --get tools
@@ -808,7 +808,7 @@ while gui.Parent do
     end
   end
   tryCook()
-  if doSupplier then
+  if doDelivery then
     local refill=false
     print(supplyCounts)
     for s,c in pairs(supplyCounts) do
